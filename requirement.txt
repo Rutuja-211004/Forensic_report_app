@@ -1,0 +1,63 @@
+📦 requirements.txt (Detailed)
+Plain text
+Pillow==10.3.0
+mysql-connector-python==8.3.0
+🔍 Detailed Explanation of Each Library
+🖼️ Pillow
+Package: Pillow==10.3.0
+✅ Purpose:
+Used for handling and displaying images in your Tkinter GUI.
+🔧 Where you used it:
+Python
+from PIL import Image, ImageTk
+💡 What it does in your project:
+Loads images like logo, background, banners
+Resizes images (Image.Resampling.LANCZOS)
+Converts images to Tkinter-compatible format (ImageTk.PhotoImage)
+📌 Example from your code:
+Python
+img3 = Image.open("image/logo.jpg")
+img3 = img3.resize((150,120), Image.Resampling.LANCZOS)
+self.photoimg9 = ImageTk.PhotoImage(img3)
+🗄️ MySQL Connector
+Package: mysql-connector-python==8.3.0
+✅ Purpose:
+Connects your Python application to a MySQL database.
+🔧 Where you used it:
+Python
+import mysql.connector
+💡 What it does in your project:
+Stores forensic records (case ID, body details, etc.)
+Retrieves data to display in table (Treeview)
+Updates and deletes records
+📌 Typical usage (expected in your functions like add_data, fetch_data):
+Python
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="yourpassword",
+    database="forensic_db"
+)
+cursor = conn.cursor()
+⚠️ Built-in Libraries (No Installation Needed)
+These are part of Python, so do NOT include them:
+Module
+Purpose
+tkinter
+GUI (forms, buttons, tables)
+ttk
+Advanced widgets (Treeview, Combobox)
+random
+Generate random values (if used)
+os
+File handling
+tempfile
+Temporary file creation
+messagebox
+Pop-up alerts
+📄 Optional Dependencies (Recommended Upgrade)
+If you want to improve your project 👇
+📑 For PDF Report Generation
+Instead of saving .txt, use PDF:
+Plain text
+reportlab==4.2.0
